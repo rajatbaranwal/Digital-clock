@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<windows.h>
+int main()
+{
+    int hrs,min,sec;
+    printf("Enter Time:\n");
+    scanf("%d%d%d",&hrs,&min,&sec);
+    if(hrs>24||min>59||sec>59)
+    {
+        printf("Errror");
+        exit(0);
+    }
+    while(1)
+    {
+        sec++;
+
+        if(sec>59)
+        {
+            min++;
+            sec=0;
+            
+
+
+        }
+        if(min>59)
+        {
+            hrs++;
+            min=0;
+        }
+        if(hrs>23)
+        {
+            hrs=0;
+        }
+        printf("\nDigtal clock:");
+        printf("\n%02d:%02d:%02d",hrs,min,sec);
+        int d=1000;
+        Sleep(d);
+        system("cls");
+    
+    
+    }
+}
